@@ -11,6 +11,7 @@ function writePassword() {
 }
 
 function generatePassword() {
+  // Prompt for input about the password's properties and validate it
   var passLength = prompt("Enter a length for the password (minimum 8, maximum 128");
 
   if (passLength < 8 || passLength > 128) {
@@ -27,6 +28,11 @@ function generatePassword() {
     alert("Please include at least one character type.");
     return
   }
+
+  var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+  var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numericChars = "0123456789";
+  var specialChars = "!@#$%^&*()-_=+/?\|`~";
 
   return;
 }
