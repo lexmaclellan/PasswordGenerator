@@ -12,14 +12,23 @@ function writePassword() {
 
 function generatePassword() {
   var passLength = prompt("Enter a length for the password (minimum 8, maximum 128");
-  var passLowercase = prompt("Include lowercase characters?");
-  var passUppercase = prompt("Include uppercase characters?");
-  var passNumeric = prompt("Include numeric characters?");
-  var passSpecial = prompt("Include special characters?");
-  
-  if (!passLowercase && !passUppercase && !passNumeric && !passSpecial) {
-    alert("Please include at least one character type.");
+
+  if (passLength < 8 || passLength > 128) {
+    alert("Please enter a length between 8 and 128 characters.");
+    return;
   }
+
+  var passLowercase = prompt("Include lowercase characters? (Y/N)").toUpperCase();
+  var passUppercase = prompt("Include uppercase characters? (Y/N)").toUpperCase();
+  var passNumeric = prompt("Include numeric characters? (Y/N)").toUpperCase();
+  var passSpecial = prompt("Include special characters? (Y/N)").toUpperCase();
+  
+  if (passLowercase !== "Y" && passUppercase !== "Y" && passNumeric !== "Y" && passSpecial !== "Y") {
+    alert("Please include at least one character type.");
+    return
+  }
+
+  return;
 }
 
 // Add event listener to generate button
