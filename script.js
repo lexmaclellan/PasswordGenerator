@@ -29,18 +29,32 @@ function generatePassword() {
     return
   }
 
-  // Character sets for each character type
-  var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-  var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var numericChars = "0123456789";
-  var specialChars = "!@#$%^&*()-_=+/?\|`~";
+  // Determine character set
+  var charset = "";
+
+  if (passLowercase === "Y") {
+    charset += "abcdefghijklmnopqrstuvwxyz";
+  }
+  if (passUppercase === "Y") {
+    charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+  if (passNumeric === "Y") {
+    charset += "0123456789";
+  }
+  if (passSpecial === "Y") {
+    charset += "!@#$%^&*()-_=+/?\|`~";
+  }
 
   // Generate password
   var password = "";
 
-  //for (i = 0; i < passLength)
+  for (i = 0; i < passLength; i++) {
+    // Choose random character from character set
+    char = charset.charAt(Math.floor(Math.random() * charset.length));
+    password += char;
+  }
 
-  return;
+  return password;
 }
 
 // Add event listener to generate button
