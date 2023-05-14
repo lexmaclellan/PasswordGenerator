@@ -16,7 +16,7 @@ function generatePassword() {
 
   if (passLength < 8 || passLength > 128 || Number.isNaN(passLength)) {
     alert("Please enter a length between 8 and 128 characters.");
-    return;
+    return "";
   }
 
   var passLowercase = prompt("Include lowercase characters? (Y/N)").toUpperCase();
@@ -26,7 +26,7 @@ function generatePassword() {
   
   if (passLowercase !== "Y" && passUppercase !== "Y" && passNumeric !== "Y" && passSpecial !== "Y") {
     alert("Please include at least one character type.");
-    return
+    return "";
   }
 
   // Determine character set
