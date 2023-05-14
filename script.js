@@ -14,7 +14,7 @@ function generatePassword() {
   // Prompt for input about the password's properties and validate it
   var passLength = prompt("Enter a length for the password (minimum 8, maximum 128");
 
-  if (passLength < 8 || passLength > 128) {
+  if (passLength < 8 || passLength > 128 || Number.isNaN(passLength)) {
     alert("Please enter a length between 8 and 128 characters.");
     return;
   }
@@ -29,10 +29,16 @@ function generatePassword() {
     return
   }
 
+  // Character sets for each character type
   var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numericChars = "0123456789";
   var specialChars = "!@#$%^&*()-_=+/?\|`~";
+
+  // Generate password
+  var password = "";
+
+  //for (i = 0; i < passLength)
 
   return;
 }
