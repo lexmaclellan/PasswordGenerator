@@ -1,4 +1,4 @@
-# UNBBootcampPasswordChallenge
+# PasswordGenerator
 
 ## Description
 A webpage that takes input from the user and generates a password based on their choices.
